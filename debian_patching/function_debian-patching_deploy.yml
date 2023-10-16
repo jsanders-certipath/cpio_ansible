@@ -1,7 +1,7 @@
 ---
 - name: Apply OS Patches
   hosts: "{{ variable_host | default('autopatch_dev_true_us_west_1') }}"
-  gather_facts: false
+  gather_facts: true
   become: true
   roles:
     - debian_patching
