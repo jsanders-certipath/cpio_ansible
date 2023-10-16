@@ -1,0 +1,11 @@
+---
+# defaults file for el_patching
+debian_patching_required_packages: "apt"
+debian_patching_reboot_timeout: 600
+debian_patching_method: "security"
+debian_patching_auto_reboot: true
+
+# Optional exclude variable for group_vars or host_vars
+# el_patching_exclude_packages:
+#   - tar
+#   - zip
