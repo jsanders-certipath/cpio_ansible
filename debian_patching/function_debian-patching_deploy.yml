@@ -1,6 +1,6 @@
 ---
 - name: Apply OS Patches
-  hosts: autopatch_dev_true
+  hosts: "{{ variable_host | default('autopatch_dev_true_us_west_1') }}"
   gather_facts: false
   become: true
   roles:
