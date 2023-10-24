@@ -1,0 +1,7 @@
+---
+- name: Auto Reboot Servers
+  hosts: "{{ variable_host | default('autopatch_dev_true_us_west_1') }}"
+  gather_facts: true
+  become: true
+  roles:
+    - auto_reboot
