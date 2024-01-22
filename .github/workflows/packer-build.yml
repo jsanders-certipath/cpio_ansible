@@ -10,6 +10,8 @@ env:
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   AWS_REGION: ${{ vars.AWS_REGION }}
   AWS_SG_ID: ${{ vars.AWS_SG_ID }}
+  BUILD_SUBNET_ID: ${{ vars. SUBNET_ID }}
+  BUILD_VPC_ID: ${{ vars.VPC_ID }}
 
 jobs:
   packer-build:
