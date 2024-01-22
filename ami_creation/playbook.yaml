@@ -11,4 +11,5 @@
     # audit_bin_copy_location: /tmp
   roles:
     - common
-    - UBUNTU22-CIS
+    - UBUNTU20-CIS
+    - UBUNTU20-STIG
