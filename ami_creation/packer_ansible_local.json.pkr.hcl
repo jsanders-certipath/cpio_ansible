@@ -48,9 +48,7 @@ variable "vpc" {
 
 variable "ami_users" {
   type    = list(string)
-  default = [
-    "admin"
-  ]
+  default = []
 }
 
 variable "arch" {
