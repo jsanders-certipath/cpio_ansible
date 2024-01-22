@@ -29,8 +29,8 @@ jobs:
           --group-id $AWS_SG_ID \
           --protocol tcp --port 22 \
           --cidr $ACTION_IP/32
-          - name: Setup packer
-      - uses: hashicorp/setup-packer@main
+      - name: Setup packer
+        uses: hashicorp/setup-packer@main
         id: setup
         with:
           version: ${{ env.PACKER_VERSION }}
