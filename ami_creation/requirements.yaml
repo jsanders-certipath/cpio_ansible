@@ -1,0 +1,4 @@
+# install from galaxy
+- src: https://github.com/ansible-lockdown/UBUNTU22-CIS.git
+  scm: git
+  version: v1.3.5

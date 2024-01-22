@@ -1,0 +1,30 @@
+---
+- name: Install other packages
+  apt:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - "apt-transport-https"
+    - "ca-certificates"
+    - "curl"
+    - "gnupg"
+    - "lsb-release"
+    - "build-essential"
+    - "awscli"
+- name: Add Docker GPG Key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+- name: Add Docker repository
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable
+    state: present
+- name: Install Docker
+  apt:
+    name: docker-ce
+    state: present
+- name: Add user to the docker group
+  user:
+    name: "{{ ansible_user }}"
+    groups: docker
+    append: yes

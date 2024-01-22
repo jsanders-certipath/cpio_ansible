@@ -1,0 +1,14 @@
+---
+- hosts: all
+  gather_facts: true    
+  become: true
+  vars:
+    ansible_python_interpreter: "/usr/bin/env python3"
+    system_is_ec2: true
+    ubtu22cis_time_sync_tool: ntp
+    # setup_audit: true
+    # run_audit: true
+    # audit_bin_copy_location: /tmp
+  roles:
+    - common
+    - UBUNTU22-CIS
