@@ -41,7 +41,7 @@ jobs:
         id: validate
         run: packer validate ami_creation/ 2>&1 | tee ${BUILD_LOG}
       - name: Packer Build
-        run: packer build -color=false -on-error=abort -var-file=/tmp/packer-var.json ami_creation/packer_ansible_local.json.pkr.hcl 2>&1 | tee ${BUILD_LOG}
+        run: packer build -color=false -on-error=abort ami_creation/packer_ansible_local.json.pkr.hcl 2>&1 | tee ${BUILD_LOG}
       - name: Remove Github Actions IP from the Security Group
         if: always()
         run: |
