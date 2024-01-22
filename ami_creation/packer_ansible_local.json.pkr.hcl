@@ -109,11 +109,11 @@ source "amazon-ebs" "AWS_AMI_Builder" {
 build {
   sources = ["source.amazon-ebs.AWS_AMI_Builder"]
 
-  // provisioner "shell" {
-  //   script       = "scripts/pre-work.sh"
-  //   pause_before = "10s"
-  //   timeout      = "10s"
-  // }
+  provisioner "shell" {
+    script       = "ami_creation/scripts/pre-work.sh"
+    pause_before = "10s"
+    timeout      = "10s"
+  }
 
   provisioner "ansible-local" {
     command           = "ANSIBLE_FORCE_COLOR=1 PYTHONUNBUFFERED=1 ANSIBLE_PIPELINING=True ansible-playbook"
@@ -125,10 +125,10 @@ build {
     role_paths        = ["ami_creation/roles/common"]
   }
 
-  // provisioner "shell" {
-  //   script       = "scripts/post-work.sh"
-  //   pause_before = "10s"
-  //   timeout      = "10s"
-  // }
+  provisioner "shell" {
+    script       = "ami_creation/scripts/post-work.sh"
+    pause_before = "10s"
+    timeout      = "10s"
+  }
 
 }
