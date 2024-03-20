@@ -74,7 +74,7 @@ source "amazon-ebs" "AWS_AMI_Builder" {
   associate_public_ip_address = "true"
   ena_support                 = true
   encrypt_boot                = false
-  instance_type               = "t3a.small"
+  instance_type               = "t4g.micro"
   launch_block_device_mappings {
     delete_on_termination = true
     device_name           = "/dev/sda1"
