@@ -13,7 +13,7 @@ packer {
 
 variable "ami_name" {
   type    = string
-  default = "docker-ubuntu2004-lts" 
+  default = "ubuntu2004-lts-arm" 
 }
 
 variable "ansible_roles_path" {
